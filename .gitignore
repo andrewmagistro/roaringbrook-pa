@@ -1,4 +1,5 @@
 node_modules/
 .next/
 .env*
-*.mp4
+hero-video-pa.mp4
+hero-video-compressed.mp4
