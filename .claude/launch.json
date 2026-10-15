@@ -2,9 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "rba-website",
+      "name": "rba-pa-website",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/andrew/Desktop/RoaringBrook-PA",
       "port": 3000
     }
   ]
