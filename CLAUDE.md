@@ -192,9 +192,20 @@ on verification until that's set.
   else; not yet decided.
 - **PA title agent licensing / underwriter relationship** — same question
   as FL had; confirm status.
-- **Logo file** — need an actual Roaring Brook Abstract logo asset for PA
-  (can likely reuse/adapt the FL wordmark files already in `public/`).
+- ~~**Logo file**~~ — resolved. The real Roaring Brook Abstract wordmark
+  (navy serif "ROARING BROOK ABSTRACT" with wave-swoosh underline,
+  sourced from the family's existing assets) is now in place, recolored
+  white, as `public/logo-rb-horizontal.png` (the only logo file actually
+  referenced in code, used by both `navbar.tsx` and `footer.tsx`).
 - **Legacy/real PA reviews** — need real Google reviews for the PA entity
   before re-enabling a testimonials section (see above).
 - **roaringbrookabstract.com hub page** — confirm scope/design before
   building (not started yet).
+
+**Confirmed — not an open question:** the homepage stats band (30+ years,
+10,000+ closings, $1.5B+ in closings, 4.8★ Google rating) and the BBB A+
+accreditation badge, inherited unchanged from the FL template during the
+rebrand sweep, are accurate for the PA entity too. Jason and Nick are
+taking over the actual existing Roaring Brook Abstract PA business (same
+history/track record), not starting a new one, so these numbers don't
+need to be replaced or treated as placeholders.
