@@ -6,7 +6,6 @@ const partners = [
   { name: "BBB Accredited Business", sub: "A+ Rating", logo: "/bbb-logo.png", height: "h-9" },
   { name: "First American Title", sub: "Underwriter", logo: "/first-american-logo.png", height: "h-12" },
   { name: "ALTA", sub: "American Land Title Association", logo: "/alta-logo.png", height: "h-10" },
-  { name: "FLTA", sub: "Florida Land Title Association", logo: "/flta-logo.png", height: "h-14" },
 ];
 
 export default function Partners() {
@@ -30,7 +29,7 @@ export default function Partners() {
             </p>
           </motion.div>
 
-          <div className="lg:col-span-9 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-4">
+          <div className="lg:col-span-9 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
             {partners.map((p, i) => (
               <motion.div
                 key={p.name}

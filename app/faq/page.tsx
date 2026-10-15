@@ -3,9 +3,9 @@ import PageHero from "@/components/page-hero";
 import FAQ from "@/components/faq";
 
 export const metadata: Metadata = {
-  title: "FAQs | Roaring Brook Title and Escrow Agency",
+  title: "FAQs | Roaring Brook Abstract",
   description:
-    "Common questions about title insurance, escrow, closing costs, and the Florida closing process.",
+    "Common questions about title insurance, escrow, closing costs, and the Pennsylvania closing process.",
 };
 
 export default function FaqPage() {

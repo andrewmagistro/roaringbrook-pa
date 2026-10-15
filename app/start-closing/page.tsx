@@ -4,9 +4,9 @@ import PageHero from "@/components/page-hero";
 import StartClosingForm from "@/components/start-closing-form";
 
 export const metadata: Metadata = {
-  title: "Start Your Closing | Roaring Brook Title and Escrow Agency",
+  title: "Start Your Closing | Roaring Brook Abstract",
   description:
-    "Getting started doesn't require a signed contract. Tell us about your Brevard County transaction and we'll walk you through what happens next.",
+    "Getting started doesn't require a signed contract. Tell us about your Pike County transaction and we'll walk you through what happens next.",
 };
 
 const steps = [

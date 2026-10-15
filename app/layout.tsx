@@ -19,35 +19,40 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Roaring Brook Title & Escrow | Brevard County, FL Title Insurance & Closings",
+  title: "Roaring Brook Abstract | Pike County, PA Title Insurance & Closings",
   description:
-    "Attorney-led title insurance, title searches, examination, and real estate closings in Melbourne and Brevard County, FL. Owned and run by attorney Chris Kimler.",
+    "Attorney-led title insurance, title searches, examination, and real estate closings in Milford and Pike County, PA. Owned and run by attorneys Jason Ohliger and Nick McIntyre.",
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "TitleInsuranceAgency",
-  name: "Roaring Brook Title & Escrow Agency",
-  founder: {
-    "@type": "Person",
-    name: "Christopher R. Kimler, Esq",
-  },
-  telephone: "+1-321-498-0135",
-  email: "chris@kimlerlaw.com",
+  name: "Roaring Brook Abstract",
+  founder: [
+    {
+      "@type": "Person",
+      name: "Jason R. Ohliger, Esq",
+    },
+    {
+      "@type": "Person",
+      name: "Nicholas J. McIntyre, Esq",
+    },
+  ],
+  telephone: "+1-570-296-7300",
+  email: "office@roaringbrookpa.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "1900 South Harbor City Boulevard, Suite 200 (1900 Building)",
-    addressLocality: "Melbourne",
-    addressRegion: "FL",
-    postalCode: "32901",
+    streetAddress: "410 Broad Street",
+    addressLocality: "Milford",
+    addressRegion: "PA",
+    postalCode: "18337",
     addressCountry: "US",
   },
   areaServed: [
-    { "@type": "City", name: "Melbourne, FL" },
-    { "@type": "City", name: "Satellite Beach, FL" },
-    { "@type": "City", name: "Cocoa Beach, FL" },
-    { "@type": "City", name: "Merritt Island, FL" },
-    { "@type": "AdministrativeArea", name: "Brevard County, FL" },
+    { "@type": "City", name: "Milford, PA" },
+    { "@type": "City", name: "Matamoras, PA" },
+    { "@type": "City", name: "Dingmans Ferry, PA" },
+    { "@type": "AdministrativeArea", name: "Pike County, PA" },
   ],
 };
 
@@ -72,7 +77,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        <script src="https://www.google.com/recaptcha/api.js?render=6Le1-4ItAAAAADafk3549bl24rTRVN9V8a0q4kGo" async defer />
+        {/* TODO: register a new reCAPTCHA v3 site key for roaringbrookpa.com in the
+            Google reCAPTCHA admin console (the FL key is domain-locked to
+            roaringbrookfl.com and will fail here) and set
+            NEXT_PUBLIC_RECAPTCHA_SITE_KEY in the Vercel project env vars. */}
+        <script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}`}
+          async
+          defer
+        />
       </body>
     </html>
   );

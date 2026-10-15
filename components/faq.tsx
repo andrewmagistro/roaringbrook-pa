@@ -39,7 +39,7 @@ const faqs = [
       },
       {
         q: "What is a title search and why is it important?",
-        a: "A title search is a thorough review of public records to trace the ownership history of a property. It uncovers issues like unpaid taxes, liens, judgments, or easements before you close. At Roaring Brook Title & Escrow, Attorney Chris Kimler personally examines every title search to make sure your transaction is legally sound.",
+        a: "A title search is a thorough review of public records to trace the ownership history of a property. It uncovers issues like unpaid taxes, liens, judgments, or easements before you close. At Roaring Brook Abstract, every title search is reviewed by one of our attorney-owners, Jason Ohliger or Nick McIntyre, to make sure your transaction is legally sound.",
       },
     ],
   },
@@ -48,11 +48,11 @@ const faqs = [
     questions: [
       {
         q: "How do I obtain title insurance and what does it cost?",
-        a: "Let your realtor know you want to purchase an Owner's Title Insurance Policy. In Florida, title insurance premiums are promulgated (set) by the Florida Office of Insurance Regulation, so the rate is the same from agent to agent. You only pay this premium once. The rate depends on the purchase price of the property, and your policy amount must equal the purchase price or mortgage amount.\n\nRoaring Brook Title & Escrow writes title insurance for First American Title Insurance Company — one of the largest and most financially secure title insurance companies in America.",
+        a: "Let your realtor know you want to purchase an Owner's Title Insurance Policy. In Pennsylvania, title insurance premiums are set by rate filings with the PA Insurance Department, so the rate is generally the same from agent to agent. You only pay this premium once. The rate depends on the purchase price of the property, and your policy amount must equal the purchase price or mortgage amount.\n\nRoaring Brook Abstract writes title insurance for First American Title Insurance Company — one of the largest and most financially secure title insurance companies in America.",
       },
       {
         q: "How long does a closing take?",
-        a: "Most closings take 1–2 hours at the table. The overall timeline from signed contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook Title & Escrow is known for fast, efficient closings — we work to get your deal done as quickly as possible.",
+        a: "Most closings take 1–2 hours at the table. The overall timeline from signed contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook Abstract is known for fast, efficient closings — we work to get your deal done as quickly as possible.",
       },
       {
         q: "What do I bring to closing?",
@@ -60,7 +60,7 @@ const faqs = [
       },
       {
         q: "Do I need an attorney for my closing?",
-        a: "In Florida, an attorney is not required for a real estate closing, but having one is a significant advantage. Roaring Brook Title & Escrow is attorney-led — Chris Kimler is both a licensed attorney and title agent. For transactions that require legal advice or representation beyond title work, the Law Offices of Christopher R. Kimler, PC works closely alongside us.",
+        a: "In Pennsylvania, an attorney is not required for a real estate closing, but having one is a significant advantage. Roaring Brook Abstract is attorney-led — Jason Ohliger and Nick McIntyre are both licensed PA attorneys as well as the owners of the title company. For transactions that require legal advice or representation beyond title work, their law firm, Ohliger & McIntyre, LLC, works closely alongside us.",
       },
     ],
   },
@@ -73,7 +73,7 @@ const faqs = [
       },
       {
         q: "What areas do you serve?",
-        a: "We serve Brevard County and the Space Coast, including Melbourne, Palm Bay, Cocoa Beach, Satellite Beach, Indialantic, Viera, Suntree, Rockledge, Titusville, and Merritt Island. Our office is located in Melbourne, FL.",
+        a: "We serve Pike County and the surrounding Pocono / tri-state region, including Milford, Matamoras, and Dingmans Ferry. Our office is located in Milford, PA.",
       },
       {
         q: "Can you handle closings on evenings or weekends?",
@@ -209,7 +209,7 @@ export default function FAQ() {
               </p>
               <div className="flex gap-3">
                 <a
-                  href="tel:3214980135"
+                  href="tel:5702967300"
                   className="text-sm font-medium text-navy hover:text-navy-light underline underline-offset-4 transition-colors"
                 >
                   Call Us

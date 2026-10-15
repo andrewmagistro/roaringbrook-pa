@@ -21,25 +21,25 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "(321) 498-0135",
+    value: "(570) 296-7300",
     sub: "Calls returned same day",
   },
   {
     icon: MapPin,
-    label: "Melbourne Office",
-    value: "1900 S. Harbor City Blvd, Suite 200",
-    sub: "1900 Building, Melbourne, FL 32901",
+    label: "Milford Office",
+    value: "410 Broad Street",
+    sub: "Milford, PA 18337",
   },
   {
     icon: MapPin,
     label: "Service Area",
-    value: "Closings Done Statewide",
-    sub: "Remote and digital, wherever you are",
+    value: "Pike County & the Poconos",
+    sub: "Remote and digital closings available",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "chris@kimlerlaw.com",
+    value: "office@roaringbrookpa.com",
     sub: "We respond promptly",
   },
   {
@@ -68,7 +68,7 @@ export default function Consultation() {
     setError("");
     try {
       const token = await (window as any).grecaptcha.execute(
-        "6Le1-4ItAAAAADafk3549bl24rTRVN9V8a0q4kGo",
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "",
         { action: "contact" }
       );
       const res = await fetch("/api/contact", {

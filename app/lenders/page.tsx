@@ -4,9 +4,9 @@ import FeatureBlocks, { type FeatureBlock } from "@/components/feature-blocks";
 import StatBar from "@/components/stat-bar";
 
 export const metadata: Metadata = {
-  title: "For Lenders | Roaring Brook Title and Escrow Agency",
+  title: "For Lenders | Roaring Brook Abstract",
   description:
-    "Comprehensive lender services in Florida: CertifID wire fraud protection, clean commitments, prompt mortgage recording, and on-time policy issuance.",
+    "Comprehensive lender services in Pennsylvania: CertifID wire fraud protection, clean commitments, prompt mortgage recording, and on-time policy issuance.",
 };
 
 const blocks: FeatureBlock[] = [

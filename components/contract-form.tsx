@@ -167,8 +167,8 @@ export default function ContractForm() {
         </p>
         <p className="mt-6 text-sm text-ink-soft">
           Need something sooner? Call{" "}
-          <a href="tel:3214980135" className="font-medium text-brand hover:underline">
-            (321) 498-0135
+          <a href="tel:5702967300" className="font-medium text-brand hover:underline">
+            (570) 296-7300
           </a>
           .
         </p>
@@ -229,7 +229,7 @@ export default function ContractForm() {
             id="propertyAddress"
             name="propertyAddress"
             required
-            placeholder="Street, city, FL, ZIP"
+            placeholder="Street, city, PA, ZIP"
             className={inputClass}
           />
         </div>
@@ -293,8 +293,8 @@ export default function ContractForm() {
       {status === "error" && (
         <p className="mt-6 rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
           Something went wrong sending your contract. Please call{" "}
-          <a href="tel:3214980135" className="font-medium underline">
-            (321) 498-0135
+          <a href="tel:5702967300" className="font-medium underline">
+            (570) 296-7300
           </a>{" "}
           and we&apos;ll take it over the phone.
         </p>

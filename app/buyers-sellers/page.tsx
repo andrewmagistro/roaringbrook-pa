@@ -5,9 +5,9 @@ import PageHero from "@/components/page-hero";
 import StatBar from "@/components/stat-bar";
 
 export const metadata: Metadata = {
-  title: "For Buyers & Sellers | Roaring Brook Title and Escrow Agency",
+  title: "For Buyers & Sellers | Roaring Brook Abstract",
   description:
-    "Convenient Florida closings for buyers and sellers — at our office, your realtor's office, your new home, or fully remote. Residential, commercial, and FSBO.",
+    "Convenient Pennsylvania closings for buyers and sellers — at our office, your realtor's office, your new home, or fully remote. Residential, commercial, and FSBO.",
 };
 
 const process = [
@@ -34,7 +34,7 @@ const process = [
 ];
 
 const locations = [
-  { icon: Building2, label: "Our office", sub: "Melbourne, Brevard County" },
+  { icon: Building2, label: "Our office", sub: "Milford, Pike County" },
   { icon: Users, label: "Your Realtor's office", sub: "Wherever is easiest" },
   { icon: Home, label: "At your new home", sub: "We come to you" },
   { icon: Laptop, label: "Remote / digital", sub: "Close from anywhere" },

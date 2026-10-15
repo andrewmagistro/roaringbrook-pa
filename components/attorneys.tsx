@@ -4,10 +4,23 @@ import { motion } from "motion/react";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const credentials = [
-  { label: "Licensed Attorney", sub: "NJ, PA, NY & FL Bar" },
-  { label: "Licensed Title Agent", sub: "First American" },
+  { label: "Licensed Attorneys", sub: "PA Bar · NY, NJ (Ohliger)" },
+  { label: "Title Company Owners", sub: "Roaring Brook Abstract" },
   { label: "Real Property Focus", sub: "Title & Closings" },
-  { label: "BBB A+ Rated", sub: "Accredited Business" },
+  { label: "Local to Pike County", sub: "Milford, PA" },
+];
+
+const attorneys = [
+  {
+    name: "Jason R. Ohliger",
+    photo: "/jason-ohliger.jpg",
+    title: "Attorney & Owner",
+  },
+  {
+    name: "Nicholas J. McIntyre",
+    photo: "/nick-mcintyre.jpg",
+    title: "Attorney & Owner",
+  },
 ];
 
 export default function Attorneys() {
@@ -31,7 +44,7 @@ export default function Attorneys() {
         </motion.div>
 
         <div className="grid items-start gap-12 lg:grid-cols-12">
-          {/* Photo */}
+          {/* Photos */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -39,28 +52,35 @@ export default function Attorneys() {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <div className="relative overflow-hidden rounded-[1.6rem] border border-cream/10 bg-cream/5 p-2.5">
-              <div className="relative overflow-hidden rounded-inner">
-                <img
-                  src="/chris-kimler.jpg"
-                  alt="Christopher R. Kimler, Esq."
-                  className="w-full object-cover object-top"
-                  style={{ aspectRatio: "4/5" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-serif text-2xl text-cream">Christopher R. Kimler</h3>
-                  <p className="mt-1 text-sm font-medium text-gold-light">Attorney &amp; Title Agent</p>
+            <div className="grid grid-cols-2 gap-3">
+              {attorneys.map((a) => (
+                <div
+                  key={a.name}
+                  className="relative overflow-hidden rounded-[1.6rem] border border-cream/10 bg-cream/5 p-2"
+                >
+                  <div className="relative overflow-hidden rounded-inner">
+                    <img
+                      src={a.photo}
+                      alt={a.name}
+                      className="w-full object-cover object-top"
+                      style={{ aspectRatio: "4/5" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <h3 className="font-serif text-base leading-tight text-cream">{a.name}</h3>
+                      <p className="mt-1 text-xs font-medium text-gold-light">{a.title}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             {/* contact pills */}
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               {[
-                { icon: Phone, label: "Call", val: "(321) 498-0135", href: "tel:3214980135" },
-                { icon: MapPin, label: "Office", val: "Melbourne, FL", href: "#consultation" },
-                { icon: Mail, label: "Email", val: "Message", href: "mailto:chris@kimlerlaw.com" },
+                { icon: Phone, label: "Call", val: "(570) 296-7300", href: "tel:5702967300" },
+                { icon: MapPin, label: "Office", val: "Milford, PA", href: "#consultation" },
+                { icon: Mail, label: "Email", val: "Message", href: "mailto:office@roaringbrookpa.com" },
               ].map(({ icon: Icon, label, val, href }) => (
                 <a
                   key={label}
@@ -89,22 +109,24 @@ export default function Attorneys() {
           >
             <div className="space-y-6 text-lg leading-relaxed text-cream/75">
               <p>
-                <span className="font-medium text-cream">Roaring Brook Title & Escrow</span>{" "}
-                is owned and run by <span className="font-medium text-cream">Chris Kimler</span> —
-                an attorney and title agent who limits his law practice to real
-                property and title.
+                <span className="font-medium text-cream">Roaring Brook Abstract</span> is
+                owned and run by local attorneys{" "}
+                <span className="font-medium text-cream">Jason Ohliger</span> and{" "}
+                <span className="font-medium text-cream">Nick McIntyre</span> — practicing
+                trial lawyers who also handle your title work directly, instead of
+                handing it off to a national company that's never set foot in Pike County.
               </p>
               <p>
                 In a market where you can't wait a week for a returned call — and
                 where you don't want your matter "pushed off" onto someone else —
-                Chris and his staff answer your questions and close your deal{" "}
-                <span className="font-medium text-cream">right away</span>.
+                Jason, Nick, and their staff answer your questions and close your
+                deal <span className="font-medium text-cream">right away</span>.
               </p>
               <p>
                 Most deals only need a title search, examination, and policy — so
-                Roaring Brook Title & Escrow is all you need. When a deal calls for legal
-                representation, the{" "}
-                <span className="font-medium text-cream">Law Offices of Christopher R. Kimler, PC</span>{" "}
+                Roaring Brook Abstract is all you need. When a deal calls for legal
+                representation, their law firm,{" "}
+                <span className="font-medium text-cream">Ohliger &amp; McIntyre, LLC</span>,
                 works right alongside us.
               </p>
             </div>
@@ -128,7 +150,7 @@ export default function Attorneys() {
               href="/contact"
               className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gold-light"
             >
-              Work with Chris
+              Work with Jason &amp; Nick
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold/15 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-45">
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </span>

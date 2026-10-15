@@ -3,9 +3,9 @@ import PageHero from "@/components/page-hero";
 import ContractForm from "@/components/contract-form";
 
 export const metadata: Metadata = {
-  title: "Submit a Contract | Roaring Brook Title and Escrow Agency",
+  title: "Submit a Contract | Roaring Brook Abstract",
   description:
-    "Upload your executed Florida real estate contract and we'll open your title file the same business day.",
+    "Upload your executed Pennsylvania real estate contract and we'll open your title file the same business day.",
 };
 
 export default function SubmitContractPage() {

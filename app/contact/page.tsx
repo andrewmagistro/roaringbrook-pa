@@ -4,9 +4,9 @@ import Consultation from "@/components/consultation";
 import Credentials from "@/components/credentials";
 
 export const metadata: Metadata = {
-  title: "Contact | Roaring Brook Title and Escrow Agency",
+  title: "Contact | Roaring Brook Abstract",
   description:
-    "Reach Roaring Brook Title and Escrow Agency in Melbourne, Florida. Call (321) 498-0135 or send us a message — calls are returned the same day.",
+    "Reach Roaring Brook Abstract in Milford, Pennsylvania. Call (570) 296-7300 or send us a message — calls are returned the same day.",
 };
 
 export default function ContactPage() {

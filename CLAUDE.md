@@ -1,204 +1,200 @@
-# Roaring Brook Abstract — Brevard County Website
+# Roaring Brook Abstract — Pennsylvania (Pike County) Website
 
 ## About the business
-Roaring Brook Abstract Company is a title insurance and real estate closing
-firm, owned and run by Chris Kimler — an attorney and title agent who limits
-his law practice to real property, probate, and trust.
+Roaring Brook Abstract is a title insurance and real estate closing company
+based in Milford, Pennsylvania (Pike County / the Poconos / tri-state area).
+It is the original/legacy Roaring Brook Abstract business — the same name
+and brand that relocated its ownership to Florida (see the sibling site,
+roaringbrookfl.com). The PA operation is being taken over and run going
+forward by two local attorneys:
 
-The firm is relocating from northeastern Pennsylvania to Melbourne, Florida
-to serve Brevard County. Same name, same ownership, new market.
+- **Jason R. Ohliger** — Temple University Beasley School of Law (2005),
+  licensed in NY, NJ, PA and multiple federal courts. Trial attorney with
+  Ohliger Injury Law / Ohliger & McIntyre, LLC, 410 Broad Street, Milford,
+  PA 18337. Over $35M recovered for clients; two of Pike County's highest
+  injury verdicts, including the county's first verdict over $1M.
+- **Nicholas J. McIntyre** — Ursinus College (B.A. Political Science, 2017),
+  University of Akron School of Law (J.D. 2019). Licensed in PA (admitted
+  2019, Pike County / District 3). Practice has included personal injury,
+  criminal defense, general litigation, and estate planning.
 
-**Services:**
+Both are partners at the same Milford, PA law firm and are now also running
+the Roaring Brook Abstract title company as a related but distinct business
+(same pattern as Chris Kimler's setup in Florida: a law firm affiliated with
+a separately-branded title company).
+
+**Services (same four as FL):**
 - Title insurance policies
 - Title searches
 - Title examination
 - Real estate closings
 
-**Affiliated with:** Law Offices of Christopher R. Kimler, PC — for deals that
-need legal representation beyond title work. Chris is a practicing attorney
-and shareholder.
+**Affiliated with:** Ohliger & McIntyre, LLC (the attorneys' law firm) — for
+deals that need legal representation beyond title work.
 
-**Credentials:** BBB Accredited, A+ rating.
+## Where this project came from
+This repo is a direct copy of the roaringbrookfl.com codebase (Next.js app,
+same components, same styling system), used as the starting template per
+the family's explicit request. The PA site should feel like a sibling of
+the FL site — same editorial, trustworthy, attorney-led positioning — but
+with its own regional identity:
+
+- **FL = coastal.** Ocean/beach drone footage, "ocean/sky" blue.
+- **PA = forest.** Aerial drone footage over Pennsylvania/Pocono forest
+  canopy instead of waves. A real compressed drone clip already exists at
+  `public/hero-video-pa-compressed.mp4` (1920x1080, ~6s loop, dense green
+  forest canopy, slow aerial pan) — this is the hero background, already
+  wired into `components/hero.tsx`.
 
 ## What makes us different
-We're a new name in Brevard, but not a new operation. The angle to lead with:
-- **Attorney-led title work.** Chris is a licensed attorney AND title agent —
-  most title companies aren't. When deals get complicated (probate, trust,
-  contested title, out-of-state owners), we handle it in-house instead of
-  punting to outside counsel.
-- **Personal service.** Calls get returned same-day. Your matter doesn't get
-  "pushed off" to a junior assistant.
-- **Fast closings.** Built for clients who can't wait a week for a callback.
+Same core differentiators as the FL site, adapted to two attorneys instead
+of one:
+- **Attorney-led title work.** Both Jason and Nick are licensed PA
+  attorneys as well as the principals behind the title company — most
+  title companies aren't run by practicing trial lawyers. Complicated
+  matters (disputed title, estates, liens) get handled in-house.
+- **Personal service.** Same promise as FL — calls returned same-day,
+  matters don't get pushed off to a junior assistant.
+- **Local roots.** Milford / Pike County / the Poconos, not an out-of-area
+  national title company.
 
 ## Goals for this site
-This is essentially a launch site for a new market. It needs to:
-- Establish credibility quickly (we're new to Brevard, not new to title)
-- Make Chris's attorney-title-agent combination unmistakable
-- Make ordering title and getting a quote as easy as possible
-- Show local Brevard County roots through imagery, even before reviews build up
-- Capture and prominently display every review we earn from day one
-
-The site should feel:
-- Clean, calm, modern — generous whitespace, fewer competing elements
-- Coastal and local to Brevard County
-- Trustworthy and professional, warm without being corporate
-- Fast and mobile-first (realtors and clients mostly browse on phones)
-
-## Reference site (competitor / baseline)
-**Prestige Title of Brevard** is the design baseline. Note: they ARE a direct
-competitor in this market, so the goal is to match their polish while
-differentiating clearly on substance (attorney-led, personal service).
-
-What we want to borrow from them:
-- **Animated coastal hero video background** — slow drone shots of Brevard
-  County beaches. This is a must-have.
-- **Easy review system** — prominent star rating, recent reviews visible on
-  the home page, one-click "Leave Feedback" button.
-- **Three audience cards** (Realtors / Buyers & Sellers / Lenders) with brief
-  copy and "Learn More" links.
-- **Quick-access icons** (Order Title / Meet Chris / Net Sheet / FAQs).
-- **Persistent floating Quick Quote button.**
-- **Order Title CTA** always visible in the header.
-
-What we want to do BETTER than them:
-- Cleaner typography (theirs is fine but template-y)
-- Lead with the attorney-led differentiator — they can't claim that
-- Don't obscure the hero with badges/logos (they have a Closinglock badge
-  sitting right over their tagline)
-- Skip the wavy blue section dividers — keeps things calmer
+- Establish Jason and Nick as the new faces of Roaring Brook Abstract in PA
+  while preserving trust in the existing Roaring Brook name/history
+  (it isn't a new company — new ownership of a known local name)
+  — mirrors how the FL site frames "new to Brevard, not new to title"
+- Make the attorney-led angle unmistakable for both attorneys
+- Make ordering title / getting a quote as easy as possible (reuse FL's
+  Order Title / Submit a Contract flow)
+- Show local Pike County / Pocono roots through imagery (forest, not ocean)
+- Carry over or rebuild a reviews section once Google reviews exist for the
+  PA entity
 
 ## Visual direction
-- **Hero background:** subtle animated/looping coastal footage of Brevard
-  County — Cocoa Beach, Melbourne Beach, Satellite Beach, Sebastian Inlet,
-  Indian River Lagoon. Slow aerial/drone shots, no fast cuts. Calm and quiet,
-  not energetic. Used only on the home hero.
-- **Interior pages:** still imagery, lots of whitespace, no competing animation.
-- **Aesthetic:** editorial-clean, not template-y. Think a well-designed
-  boutique law firm or upscale real estate brokerage — not a SaaS dashboard,
-  not a 2015 WordPress theme.
-- **Avoid:** generic stock photos of handshakes or families with moving boxes,
-  heavy gradient buttons, drop shadows, wavy/chevron section dividers,
-  cluttered multi-color palettes.
+- **Hero background:** looping aerial drone footage over PA/Pocono forest
+  canopy (already sourced — see `public/hero-video-pa-compressed.mp4`).
+  Same slow, calm, no-fast-cuts treatment as the FL ocean footage.
+- **Interior pages:** still imagery, lots of whitespace, no competing
+  animation — same approach as FL.
+- **Aesthetic:** same editorial-clean boutique-firm look as FL. Not a
+  SaaS dashboard, not a 2015 WordPress theme.
 
 ## Brand
-- **Primary color:** confident coastal blue (refine the existing
-  Roaring Brook blue toward something cleaner and more Florida — think
-  ocean/sky, not muted PA navy)
-- **Accent:** white, warm sand/cream neutral, single accent used sparingly
-- **Logo:** keep "Roaring Brook Abstract" wordmark. The name has PA roots
-  but works as a distinct brand — don't rename, but consider a refresh of
-  the wordmark to feel less regional-specific
-- **Typography:** clean serif for headings (warmth + trust, fits legal/title
-  work), modern sans-serif for body. Editorial pairing, not corporate.
+- **Primary color:** needs a PA-appropriate adjustment — probably a deeper
+  forest-green or a muted navy (vs. FL's bright coastal blue) to feel
+  distinct from the FL site while still reading as "Roaring Brook." Not
+  yet finalized — **open question, confirm direction before a full color
+  pass.**
+- **Logo:** keep "Roaring Brook Abstract" wordmark, consistent with FL.
+  Do not reuse Ohliger Injury Law's own navy diamond logo — that belongs
+  to the unrelated law firm brand, not the title company.
+- **Typography:** same serif/sans editorial pairing as FL, for consistency
+  across the two sibling sites.
 
 ## Voice and content
-- Confident, warm, plainspoken. Real attorney, real title agent, real service.
-- Lead with the existing core promise (it's strong, keep it): "When you need
-  to move quickly on your real estate transaction, tell your lender or
-  realtor you want Roaring Brook Abstract to handle your transaction."
-- Highlight: Chris is an attorney AND title agent. Calls returned.
-  Matters don't get pushed off. Deals close fast.
-- Be honest about being new to Brevard if it comes up — frame it as bringing
-  experienced, attorney-led title work to the area, not as starting from zero.
-- Avoid jargon. Title insurance confuses people — explain it like a neighbor.
+- Same confident, warm, plainspoken voice as FL.
+- The "When you need to move quickly on your real estate transaction..."
+  core promise likely still applies and should carry over.
+- Be clear this is a continuation of the existing Roaring Brook Abstract
+  PA business under new ownership (Jason + Nick), not a brand-new startup
+  — the opposite framing from FL, which IS new to its market.
 
 ## Site structure
+Same structure as the FL site:
 - Home
-- About (Chris's bio, attorney + title agent credentials, BBB rating, the
-  firm's story including the move from PA to FL)
+- About (now: bios for both Jason Ohliger and Nick McIntyre, their legal
+  credentials, and the Roaring Brook Abstract PA story/history)
 - Services (Title Insurance / Title Searches / Title Examination / Closings)
-- Resources / FAQs (common questions, helpful links, net sheet calculator)
-- Contact (Melbourne office, hours, map, contact form)
-- **Order Title** (primary CTA, always visible in header)
+- Resources / FAQs
+- Contact (Milford office, hours, map, contact form)
+- Order Title (primary CTA, always visible in header)
 
-### Home page sections (in order)
-1. Hero — looping Brevard coastal video, tagline, two CTAs
-   (Contact Us / Our Services)
-2. Three audience cards — Realtors / Buyers & Sellers / Lenders
-3. Quick-access icons — Order Title / Meet Chris / Net Sheet / FAQs
-4. Welcome / mission section — lift the "When you need to move quickly..."
-   copy from the current site, expand with the attorney-led angle
-5. **Reviews section** (critical — see below)
-6. Trust strip — BBB A+ logo, ALTA member, First American partner,
-   FL Bar / FL Insurance credentials once obtained
-7. Footer — Melbourne office address & phone, resources, LinkedIn
-
-## Reviews — high priority
-Reviews drive new business, especially for a firm new to the market. The
-system should:
-- Display the overall star rating and total review count prominently
-- Show recent reviews with reviewer name, date, and full text
-- Include a clear, single-click "Leave a Review" button
-- Pull from Google reviews (most trusted source for clients)
-- Be visible on the home page, not buried on a sub-page
-- Stay tasteful — reviews build trust, they shouldn't dominate the layout
-- **Starting position:** we'll have few/no Brevard reviews at launch. Consider
-  carrying over PA reviews with dates intact (honest about location), and
-  prioritize collecting new Florida reviews from day one through follow-up
-  emails after every closing.
+### Known content gaps vs. the FL site
+The FL `About` page is built entirely around a single owner (Chris Kimler)
+— his solo bio, his family, his family-photo slideshow. All of that is
+FL/Chris-specific and needs to be replaced, not just reworded:
+- Needs a **two-attorney bio layout** (Jason + Nick) instead of one.
+- The family-slideshow component and `family-*.jpg` photos are Chris's
+  actual family — **do not reuse on the PA site.** Either remove the
+  "outside the office" section entirely or replace with something
+  Jason/Nick-appropriate if they want a personal-touch section later.
+- Jason's real bio copy/credentials have been sourced from
+  tristatetrial.com (Ohliger Injury Law's site) — see attorney details
+  above. A real headshot of Jason was also pulled from that site.
+- Nick's bio is thinner (sourced from PA disciplinary board + web search,
+  not a dedicated bio page) and **no individual headshot of Nick exists
+  yet** — only a group team photo that may include him. Needs a real
+  headshot and a proper bio paragraph from the client.
 
 ## Functional features
-- **Order Title** button in header (primary conversion action)
-- **Click-to-call** Melbourne phone number
-- **Contact form** with clear next-steps after submission
-- **Net Sheet calculator** for buyers/sellers to estimate costs
-- **Common Questions / FAQ** organized by audience
-- Optional: Quick Quote estimator widget (lead capture for not-quite-ready visitors)
-- Optional: Live chat (Prestige has one — useful but not essential at launch)
+Same as FL: Order Title button, click-to-call, contact form, Net Sheet
+calculator, FAQ, floating Quick Quote (if used on FL).
 
-## Tech preferences
-- **Current PA site stack:** WordPress with Slider Revolution. Likely a custom
-  or older theme.
-- **For the new FL site, decide:**
-  - Stay on WordPress with a cleaner modern theme + new design
-    (lowest cost, easiest to maintain solo)
-  - Rebuild on Webflow or Squarespace (better design control, monthly fee)
-  - Custom build on Astro/Next.js (best performance, needs a developer)
-- Mobile-first responsive design, no exceptions
-- Page load under 3 seconds on 4G
-- SEO essentials: proper headings, alt text, meta descriptions, LocalBusiness
-  schema for the Melbourne office, Review schema for testimonials, target
-  keywords like "Brevard County title company," "Melbourne FL title insurance,"
-  "Space Coast real estate closing"
-- HTTPS, secure forms, no third-party trackers beyond Google Analytics
+## What's carrying over from the FL template (unchanged structurally)
+- Full Next.js/Tailwind/Framer Motion component system
+- Page structure and section ordering
+- Forms and API routes (contact, submit-contract, start-closing)
+- Core "When you need to move quickly..." tagline (pending confirmation
+  it still applies verbatim for PA)
 
-## What's carrying over from PA
-- "Roaring Brook Abstract" name and wordmark (refined typography ok)
-- Core tagline: "When you need to move quickly on your real estate
-  transaction..." — strong copy, keep
-- Chris Kimler as owner / attorney / title agent
-- Four core services (Title Insurance / Title Searches / Title Examination /
-  Real Estate Closings)
-- Affiliation with Law Offices of Christopher R. Kimler, PC
-- BBB A+ accreditation
-- Resource partnerships (First American, ALTA)
-- LinkedIn profile
+## What's new/different for PA
+- Two attorneys instead of one (Jason Ohliger + Nick McIntyre)
+- Forest hero footage instead of coastal footage (asset already in repo)
+- Milford, PA office instead of Melbourne, FL office
+- PA-specific licensing/credentials and PA Bar / PA title agent info
+- Likely a distinct (not identical) accent color from FL to differentiate
+  the two sibling sites despite the shared template
+- `roaringbrookabstract.com` is being turned into a simple hub/landing
+  page that splits traffic to roaringbrookfl.com and roaringbrookpa.com
+  — a separate, much smaller build, not part of this repo
 
-## What's new for Brevard
-- Florida title agent licensing (confirm in progress / completed)
-- Melbourne, FL office address and 321 area code phone number
-- Brevard County service area focus (Melbourne, Palm Bay, Cocoa Beach,
-  Satellite Beach, Indialantic, Viera, Suntree, Rockledge, Titusville,
-  Merritt Island, Vero Beach if expanding south)
-- Florida-specific resources (Florida Insurance Department, Florida Bar,
-  Florida Land Title Association)
-- New coastal imagery — drop the PA mountain/forest references entirely
-- New Google Business Profile for the Melbourne location
+## Rebrand sweep status (done)
+The full FL → PA mechanical/content rebrand pass across the site is
+complete: navbar, footer, consultation, cta-band, chatbot (genuinely
+rewritten — not just find/replace — for two co-owner attorneys instead of
+one), and every app/ page (contact, lenders, faq, buyers-sellers,
+submit-contract, realtors, start-closing), plus contract-form.tsx and
+start-closing-form.tsx. All phone numbers now point to (570) 296-7300,
+all addresses to 410 Broad Street, Milford, PA 18337, all "Florida"/
+"Melbourne"/"Brevard"/"Chris Kimler" references removed or replaced.
+`npx tsc --noEmit` passes clean with zero errors.
 
-## Workflow preferences
-- When suggesting layouts, show me 2 directions before going deep on one
-- Ask before adding new dependencies or third-party widgets
-- Flag anything that might slow down page load
-- Keep accessibility (contrast, alt text, keyboard nav) baked in from the start
+**Testimonials intentionally left out of the homepage for now.**
+`components/testimonials-section.tsx` still contains the FL site's real
+Google reviews, which name Chris Kimler and his staff by name — those
+can't be reused for Jason/Nick's PA business (it would be misattributing
+real customers' words to the wrong attorneys). The component still exists
+in the repo but is no longer imported/rendered in `app/page.tsx`. Re-add
+it (or build a new one) once real Roaring Brook Abstract PA reviews are
+sourced — see open question below.
+
+**reCAPTCHA de-hardcoded.** The site key is no longer hardcoded in
+`app/layout.tsx` / `components/consultation.tsx` — both now read
+`process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY`, which is unset until a new
+key is registered (see open question below). Forms will silently no-op
+on verification until that's set.
 
 ## Open questions to resolve
-- Final Melbourne office address and phone number
-- Florida title agent license status / underwriter relationship
-- Source of Brevard coastal footage (own drone, hired local videographer,
-  or licensed stock from Pexels/Storyblocks)
-- Reviews migration — bring PA reviews over, or start fresh?
-- Tech stack decision (stay WordPress, move to Webflow, or rebuild custom?)
-- Whether to keep the PA offices open or fully relocate
-- Launch timeline for the Brevard operation
-- Fresh headshot for Chris in a Florida setting (the current PA photo works
-  but a new one would help signal the fresh start)
+- **Office address/phone for the title company specifically** — currently
+  using the law firm's Milford address (410 Broad Street, Milford, PA
+  18337) and phone (570-296-7300) as a placeholder. Confirm whether the
+  title company uses the same office/number or its own.
+- **reCAPTCHA site key** — register a new reCAPTCHA v3 site key for
+  roaringbrookpa.com in the Google reCAPTCHA admin console (the FL key is
+  domain-locked to roaringbrookfl.com) and set
+  `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` in the Vercel project's env vars.
+- **Nick McIntyre's headshot** — need a real individual photo; currently
+  only have a cropped group photo as a placeholder.
+- **Final bio copy for both attorneys** — current copy is assembled from
+  their existing legal website and public records; client should review/
+  approve the actual wording used on the title company site.
+- **Brand color direction** — forest green vs. muted navy vs. something
+  else; not yet decided.
+- **PA title agent licensing / underwriter relationship** — same question
+  as FL had; confirm status.
+- **Logo file** — need an actual Roaring Brook Abstract logo asset for PA
+  (can likely reuse/adapt the FL wordmark files already in `public/`).
+- **Legacy/real PA reviews** — need real Google reviews for the PA entity
+  before re-enabling a testimonials section (see above).
+- **roaringbrookabstract.com hub page** — confirm scope/design before
+  building (not started yet).

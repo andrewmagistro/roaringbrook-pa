@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Linkedin, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, Globe, ArrowUpRight } from "lucide-react";
 
 const audienceLinks = [
   { label: "Realtors", href: "/realtors" },
   { label: "Lenders", href: "/lenders" },
   { label: "Buyers & Sellers", href: "/buyers-sellers" },
-  { label: "Meet Chris Kimler", href: "/about" },
+  { label: "Meet Jason & Nick", href: "/about" },
 ];
 
 const siteLinks = [
@@ -18,8 +18,7 @@ const siteLinks = [
 const resourceLinks = [
   { label: "First American Title", href: "https://www.firstam.com" },
   { label: "American Land Title Association", href: "https://www.alta.org" },
-  { label: "Florida Land Title Association", href: "https://www.flta.org" },
-  { label: "Florida Office of Insurance Regulation", href: "https://www.floir.com" },
+  { label: "PA Department of Insurance", href: "https://www.insurance.pa.gov" },
 ];
 
 export default function Footer() {
@@ -55,23 +54,23 @@ export default function Footer() {
           <div>
             <img
               src="/logo-rb-horizontal.png"
-              alt="Roaring Brook Title and Escrow Agency"
+              alt="Roaring Brook Abstract"
               className="h-16 w-auto"
             />
             <p className="mt-6 text-sm leading-relaxed text-white/50">
               Attorney owned and operated title, escrow, and closing services
-              for buyers, sellers, realtors, and lenders based in Brevard
-              County and servicing all 67 counties in Florida.
+              for buyers, sellers, realtors, and lenders based in Milford,
+              Pike County and servicing the Pocono / tri-state region.
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="https://www.linkedin.com/company/roaring-brook-title-and-escrow/posts/?feedView=all"
+                href="https://www.tristatetrial.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-lg bg-white/5 p-2 text-white/50 transition-colors hover:bg-gold/10 hover:text-gold"
-                aria-label="LinkedIn"
+                aria-label="Ohliger & McIntyre, LLC website"
               >
-                <Linkedin className="h-4 w-4" />
+                <Globe className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -135,41 +134,39 @@ export default function Footer() {
           {/* Office */}
           <div>
             <h3 className="mb-5 text-sm font-semibold text-white">
-              Our home office in Brevard County — or any of our satellite
-              offices serving all 67 counties in Florida
+              Our office in Milford, PA — serving Pike County and the
+              Pocono / tri-state region
             </h3>
             <ul className="space-y-5">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
                 <div>
-                  <p className="text-sm font-medium text-white">Melbourne Office</p>
+                  <p className="text-sm font-medium text-white">Milford Office</p>
                   <p className="mt-0.5 text-xs text-white/40">
-                    1900 Building
+                    410 Broad Street
                     <br />
-                    1900 South Harbor City Boulevard, Suite 200
-                    <br />
-                    Melbourne, FL 32901
+                    Milford, PA 18337
                   </p>
                   <a
-                    href="tel:3214980135"
+                    href="tel:5702967300"
                     className="mt-1.5 flex items-center gap-1.5 text-xs text-gold hover:underline"
                   >
-                    <Phone className="h-3 w-3" /> (321) 498-0135
+                    <Phone className="h-3 w-3" /> (570) 296-7300
                   </a>
                 </div>
               </li>
               <li className="flex gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
                 <a
-                  href="mailto:chris@kimlerlaw.com"
+                  href="mailto:office@roaringbrookpa.com"
                   className="text-sm text-white/80 transition-colors hover:text-gold"
                 >
-                  chris@kimlerlaw.com
+                  office@roaringbrookpa.com
                 </a>
               </li>
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                <p className="text-sm text-white/80">Closings Done Statewide</p>
+                <p className="text-sm text-white/80">Closings Done Throughout Pike County</p>
               </li>
             </ul>
           </div>
@@ -180,7 +177,7 @@ export default function Footer() {
       <div className="border-t border-white/10 py-6">
         <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-xs text-white/30 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Roaring Brook Title and Escrow Agency.
+            © {new Date().getFullYear()} Roaring Brook Abstract.
             All rights reserved.
           </p>
           <div className="flex gap-6">

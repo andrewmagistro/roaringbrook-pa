@@ -28,7 +28,7 @@ export default function Hero() {
       ref={ref}
       className="relative flex min-h-[calc(100dvh-5rem)] flex-col justify-end overflow-hidden"
     >
-      {/* Coastal video background */}
+      {/* Forest video background */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 bg-brand-deep">
         <video
           autoPlay
@@ -38,7 +38,7 @@ export default function Hero() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-55"
         >
-          <source src="/hero-video-compressed.mp4" type="video/mp4" />
+          <source src="/hero-video-pa-compressed.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-deep via-brand-deep/60 to-brand-deep/35" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/75 via-transparent to-transparent" />
@@ -52,7 +52,7 @@ export default function Hero() {
           className="eyebrow mb-7 text-cream/75"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-          Attorney Owned &amp; Operated · Florida Title &amp; Escrow
+          Attorney Owned &amp; Operated · Pennsylvania Title &amp; Escrow
         </motion.p>
 
         <h1 className="font-serif leading-[1.02] tracking-[-0.03em] text-cream text-[clamp(3rem,9vw,7.5rem)]">
@@ -98,11 +98,11 @@ export default function Hero() {
               </span>
             </Link>
             <a
-              href="tel:3214980135"
+              href="tel:5702967300"
               className="inline-flex items-center gap-2 rounded-full border border-cream/30 px-7 py-4 text-base font-medium text-cream transition-colors duration-300 hover:bg-cream/10"
             >
               <Phone className="h-4 w-4" />
-              (321) 498-0135
+              (570) 296-7300
             </a>
           </motion.div>
         </div>

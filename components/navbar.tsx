@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Realtors", href: "/realtors" },
   { label: "Lenders", href: "/lenders" },
   { label: "Buyers & Sellers", href: "/buyers-sellers" },
-  { label: "Meet Chris Kimler", href: "/about" },
+  { label: "Meet Jason & Nick", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -24,10 +24,10 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-brand">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-6">
         {/* Logo */}
-        <Link href="/" className="group flex shrink-0 items-center" aria-label="Roaring Brook Title and Escrow Agency — home">
+        <Link href="/" className="group flex shrink-0 items-center" aria-label="Roaring Brook Abstract — home">
           <img
             src="/logo-rb-horizontal.png"
-            alt="Roaring Brook Title and Escrow Agency"
+            alt="Roaring Brook Abstract"
             className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-85"
           />
         </Link>
@@ -64,12 +64,12 @@ export default function Navbar() {
         {/* Right side */}
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <a
-            href="tel:3214980135"
+            href="tel:5702967300"
             className="hidden items-center gap-1.5 whitespace-nowrap px-1 text-sm font-medium text-white/70 transition-colors hover:text-white 2xl:flex"
-            aria-label="Call (321) 498-0135"
+            aria-label="Call (570) 296-7300"
           >
             <Phone className="h-3.5 w-3.5" />
-            (321) 498-0135
+            (570) 296-7300
           </a>
           <Link
             href="/start-closing"
@@ -126,10 +126,10 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="tel:3214980135"
+                href="tel:5702967300"
                 className="mt-1 flex items-center gap-2 px-4 py-3 text-sm text-white/70"
               >
-                <Phone className="h-4 w-4 text-gold" /> (321) 498-0135
+                <Phone className="h-4 w-4 text-gold" /> (570) 296-7300
               </a>
               <Link
                 href="/start-closing"

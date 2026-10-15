@@ -16,12 +16,6 @@ const credentials = [
     height: "h-12",
   },
   {
-    name: "Florida Land Title Association",
-    caption: "FLTA Member",
-    logo: "/flta-logo.png",
-    height: "h-14",
-  },
-  {
     name: "First American Title Insurance Company",
     caption: "Underwriter",
     logo: "/first-american-logo.png",
@@ -48,7 +42,7 @@ export default function Credentials() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-3">
           {credentials.map(({ name, caption, logo, height }, i) => (
             <motion.div
               key={name}

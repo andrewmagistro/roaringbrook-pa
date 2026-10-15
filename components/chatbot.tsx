@@ -18,12 +18,12 @@ const faqs: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["title search", "what is a title search"],
     answer:
-      "A title search is a review of public records to trace the ownership history of a property and uncover any issues — like unpaid taxes, judgments, or easements — before you close. At Roaring Brook, Attorney Chris Kimler personally examines every title search.",
+      "A title search is a review of public records to trace the ownership history of a property and uncover any issues — like unpaid taxes, judgments, or easements — before you close. At Roaring Brook Abstract, every title search is reviewed by one of our attorney-owners, Jason Ohliger and Nick McIntyre.",
   },
   {
     keywords: ["how long", "closing take", "how long does"],
     answer:
-      "Most closings take 1–2 hours at the table. The timeline from contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook is known for fast, efficient closings — we work to get your deal done as quickly as possible.",
+      "Most closings take 1–2 hours at the table. The timeline from contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook Abstract is known for fast, efficient closings — we work to get your deal done as quickly as possible.",
   },
   {
     keywords: ["bring to closing", "what do i need", "what to bring"],
@@ -33,52 +33,62 @@ const faqs: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["cost", "fee", "how much", "price", "charge"],
     answer:
-      "Fees vary depending on the transaction type and purchase price. Contact us directly for a quote — call (321) 498-0135 and we'll give you a clear breakdown with no surprises.",
+      "Fees vary depending on the transaction type and purchase price. Contact us directly for a quote — call (570) 296-7300 and we'll give you a clear breakdown with no surprises.",
   },
   {
     keywords: ["order title", "start", "get started", "how do i order"],
     answer:
-      "To order title, just call us or fill out the contact form on this page. Our team will reach out right away to get your transaction started. Call: (321) 498-0135.",
+      "To order title, just call us or fill out the contact form on this page. Our team will reach out right away to get your transaction started. Call: (570) 296-7300.",
   },
   {
     keywords: ["location", "located", "address", "where are you", "office"],
     answer:
-      "Our main office is in Melbourne, FL, with satellite closing offices in Satellite Beach, Cocoa Beach, and Merritt Island.\n\n📍 1900 Building, 1900 South Harbor City Boulevard, Suite 200, Melbourne, FL 32901\n📞 (321) 498-0135",
+      "Our office is in Milford, PA, serving Pike County and the surrounding Pocono / tri-state region.\n\n📍 410 Broad Street, Milford, PA 18337\n📞 (570) 296-7300",
   },
   {
     keywords: ["area", "county", "serve", "coverage", "where do you"],
     answer:
-      "We proudly serve Brevard County and the Space Coast, including Melbourne, Palm Bay, Cocoa Beach, Satellite Beach, Indialantic, Viera, Suntree, Rockledge, Titusville, Merritt Island, and surrounding communities. We also offer satellite closing offices in Satellite Beach, Cocoa Beach, and Merritt Island for client convenience.",
+      "We proudly serve Pike County and the Pocono region, including Milford, Matamoras, Dingmans Ferry, and the surrounding tri-state area. Remote and digital closings are available for clients who can't make it into the office.",
   },
   {
-    keywords: ["chris", "attorney", "kimler", "lawyer", "who is"],
+    keywords: ["jason", "ohliger", "who is jason"],
     answer:
-      "Chris Kimler is a licensed attorney and title agent who owns and operates Roaring Brook Title & Escrow. He limits his law practice to real property and title — and personally examines every title. He's also a shareholder in the Law Offices of Christopher R. Kimler, PC.",
+      "Jason R. Ohliger is a trial attorney and co-owner of Roaring Brook Abstract. He's a graduate of Temple University's Beasley School of Law, licensed in PA, NJ, and NY, and has recovered more than $35 million for clients over his career — including two of Pike County's highest injury verdicts.",
+  },
+  {
+    keywords: ["nick", "mcintyre", "who is nick"],
+    answer:
+      "Nicholas J. McIntyre is a Pike County native and co-owner of Roaring Brook Abstract. He earned his J.D. from the University of Akron School of Law and was admitted to the PA Bar in 2019. He brings the same hands-on, answer-the-phone approach to title work that clients already know him for in the courtroom.",
+  },
+  {
+    keywords: ["attorney", "lawyer", "who owns", "who runs"],
+    answer:
+      "Roaring Brook Abstract is owned and personally run by local attorneys Jason Ohliger and Nick McIntyre, partners at Ohliger & McIntyre, LLC. They handle title work directly instead of handing it off to a national company that's never set foot in Pike County.",
   },
   {
     keywords: ["refinance", "refi"],
     answer:
-      "Yes, we handle refinance closings! Contact us at (321) 498-0135 and we'll get your refinance moving quickly.",
+      "Yes, we handle refinance closings! Contact us at (570) 296-7300 and we'll get your refinance moving quickly.",
   },
   {
     keywords: ["hours", "open", "when", "available"],
     answer:
-      "Our offices are open Monday–Friday, 9 AM–5 PM. We're also available for urgent matters outside regular hours. Give us a call and we'll do our best to accommodate your schedule.",
+      "Our office is open Monday–Friday, 9 AM–5 PM. We're also available for urgent matters outside regular hours. Give us a call and we'll do our best to accommodate your schedule.",
   },
   {
     keywords: ["probate", "trust", "estate", "will"],
     answer:
-      "Chris Kimler handles real property matters through the Law Offices of Christopher R. Kimler, PC. For legal questions specific to your situation, please call Chris directly at (321) 498-0135 so he can advise you properly.",
+      "Jason and Nick handle real property and related legal matters through their law firm, Ohliger & McIntyre, LLC. For legal questions specific to your situation, please call us directly at (570) 296-7300 so one of them can advise you properly.",
   },
 ];
 
 const GREETING =
-  "Hi! I'm the Roaring Brook Title & Escrow virtual assistant. I can answer common questions about title insurance, closings, and our services.\n\nFor legal advice specific to your situation, please call Attorney Chris Kimler directly.\n\nHow can I help you today?";
+  "Hi! I'm the Roaring Brook Abstract virtual assistant. I can answer common questions about title insurance, closings, and our services.\n\nFor legal advice specific to your situation, please call attorneys Jason Ohliger or Nick McIntyre directly.\n\nHow can I help you today?";
 
 const QUICK_QUESTIONS = [
   "What is title insurance?",
   "How long does a closing take?",
-  "Where are your offices?",
+  "Where is your office?",
   "How do I order title?",
 ];
 
@@ -98,18 +108,18 @@ function getBotResponse(input: string): string {
     lower.includes("dispute") ||
     lower.includes("court")
   ) {
-    return "For legal questions specific to your situation, please contact Attorney Chris Kimler directly — that's exactly what he's here for.\n\n📞 (321) 498-0135\n\nThis chat is for general information only and does not constitute legal advice.";
+    return "For legal questions specific to your situation, please contact Jason Ohliger or Nick McIntyre directly — that's exactly what they're here for.\n\n📞 (570) 296-7300\n\nThis chat is for general information only and does not constitute legal advice.";
   }
 
   if (lower.includes("thank")) {
-    return "You're welcome! Is there anything else I can help you with? For specific questions, feel free to call us at (321) 498-0135.";
+    return "You're welcome! Is there anything else I can help you with? For specific questions, feel free to call us at (570) 296-7300.";
   }
 
   if (lower.includes("hello") || lower.includes("hi") || lower.includes("hey")) {
-    return "Hi there! How can I help you today? I can answer questions about title insurance, closings, our services, or office locations.";
+    return "Hi there! How can I help you today? I can answer questions about title insurance, closings, our services, or our office location.";
   }
 
-  return "That's a great question! For the most accurate answer, I'd recommend calling us directly:\n\n📞 (321) 498-0135\n\nOr fill out the contact form on this page and we'll get back to you right away.";
+  return "That's a great question! For the most accurate answer, I'd recommend calling us directly:\n\n📞 (570) 296-7300\n\nOr fill out the contact form on this page and we'll get back to you right away.";
 }
 
 export default function Chatbot() {
@@ -170,13 +180,13 @@ export default function Chatbot() {
             <div className="bg-navy-deep px-5 py-4 flex items-center gap-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cream/10 font-serif text-gold-light">R</span>
               <div className="flex-1">
-                <p className="text-cream font-semibold text-sm">Roaring Brook Title & Escrow</p>
+                <p className="text-cream font-semibold text-sm">Roaring Brook Abstract</p>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-green-400" />
                   <span className="text-white/60 text-xs">Online now</span>
                 </div>
               </div>
-              <a href="tel:3214980135" className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+              <a href="tel:5702967300" className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
                 <Phone className="h-4 w-4 text-white" />
               </a>
             </div>
@@ -184,7 +194,7 @@ export default function Chatbot() {
             {/* Disclaimer */}
             <div className="bg-amber-50 border-b border-amber-100 px-4 py-2">
               <p className="text-amber-700 text-[10px] leading-relaxed">
-                ⚠️ For general information only — not legal advice. For legal questions call Chris Kimler directly.
+                ⚠️ For general information only — not legal advice. For legal questions call Jason or Nick directly.
               </p>
             </div>
 
