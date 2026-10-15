@@ -23,12 +23,12 @@ const testimonials: Testimonial[] = [
     role: "Home Buyer",
   },
   {
-    text: "My wife and I used Roaring Brook Abstract on two occasions. Both times we had a pleasant experience. Chris and Patti were very informative and professional, which made the process very easy. They were helpful and informative for our big purchase.",
+    text: "My wife and I used Roaring Brook Title & Escrow on two occasions. Both times we had a pleasant experience. Chris and Patti were very informative and professional, which made the process very easy. They were helpful and informative for our big purchase.",
     name: "DJ Gozzi",
     role: "Home Buyer",
   },
   {
-    text: "I've done business with Roaring Brook Abstract for years and have always been very satisfied. The office staff is exceptionally responsive, helpful and always kind. Chris Kimler, the Attorney, goes above and beyond for me and my clients.",
+    text: "I've done business with Roaring Brook Title & Escrow for years and have always been very satisfied. The office staff is exceptionally responsive, helpful and always kind. Chris Kimler, the Attorney, goes above and beyond for me and my clients.",
     name: "Sarah Tigue",
     role: "Real Estate Agent",
   },
@@ -38,12 +38,12 @@ const testimonials: Testimonial[] = [
     role: "Real Estate Professional",
   },
   {
-    text: "Excellent customer service and care given to my buyers. As a Realtor, the updates from Roaring Brook Abstract as to progress of closing were 100% on point keeping me informed. Feel confident referring your buyers to this company!",
+    text: "Excellent customer service and care given to my buyers. As a Realtor, the updates from Roaring Brook Title & Escrow as to progress of closing were 100% on point keeping me informed. Feel confident referring your buyers to this company!",
     name: "Lora Ubaldi",
     role: "Realtor",
   },
   {
-    text: "Chris and Patti at Roaring Brook Abstract handled our closing very efficiently and professionally and were a pleasure to work with. They handled all the paperwork as required, kept us informed along the way, and explained everything clearly.",
+    text: "Chris and Patti at Roaring Brook Title & Escrow handled our closing very efficiently and professionally and were a pleasure to work with. They handled all the paperwork as required, kept us informed along the way, and explained everything clearly.",
     name: "Michael Ando",
     role: "Home Buyer",
   },
@@ -54,9 +54,9 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const firstColumn  = testimonials.slice(0, 3);
+const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
-const thirdColumn  = testimonials.slice(6, 9);
+const thirdColumn = testimonials.slice(6, 9);
 
 export default function TestimonialsSection() {
   return (
@@ -70,32 +70,39 @@ export default function TestimonialsSection() {
           className="flex flex-col items-center justify-center max-w-[600px] mx-auto mb-4"
         >
           <p className="eyebrow text-navy/70 mb-4">
-            <span className="h-1 w-1 rounded-full bg-white" /> Client reviews
+            <span className="h-1 w-1 rounded-full bg-gold" /> Client reviews
           </p>
           <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-ink text-center leading-[1.05]">
             Trusted, <span className="italic text-navy">deal after deal</span>.
           </h2>
           <div className="flex items-center justify-center gap-1 mt-5">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 fill-white text-navy-light" viewBox="0 0 20 20">
+              <svg key={i} className="w-5 h-5 fill-gold text-gold" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             ))}
-            <span className="ml-2 text-ink font-semibold text-sm">5.0</span>
-            <span className="text-ink-soft text-sm ml-1">· Google Reviews</span>
+            <span className="ml-2 text-ink font-semibold text-sm">4.8</span>
+            <span className="text-ink-soft text-sm ml-1">· 150+ Google Reviews</span>
           </div>
           <p className="text-center mt-4 text-ink-soft">
-            Buyers, sellers, realtors, and lenders across Pike and Wayne County
-            trust Roaring Brook Abstract for every transaction.
+            Buyers, sellers, realtors, and lenders trust Roaring Brook Title & Escrow
+            for every transaction.
           </p>
         </motion.div>
 
-        <div className="flex justify-center gap-6 mt-12 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] max-h-[740px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={18} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={22} />
-          <TestimonialsColumn testimonials={thirdColumn}  className="hidden lg:block" duration={20} />
+        <div className="flex justify-center gap-6 mt-12">
+          <TestimonialsColumn testimonials={firstColumn} />
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+          />
         </div>
 
+        {/* Leave a review button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,10 +112,10 @@ export default function TestimonialsSection() {
         >
           <p className="text-muted-foreground text-sm">Happy with our service?</p>
           <a
-            href="https://www.google.com/maps/place/Roaring+Brook+Abstract+Company+Inc/@41.3246706,-74.8100715,17z/data=!4m8!3m7!1s0x89c35b1453fb7eb5:0x7f41d3d26c3d8adc!8m2!3d41.3246706!4d-74.8074966!9m1!1b1!16s%2Fg%2F11cn6rvjms"
+            href="https://www.google.com/maps/place/Roaring+Brook+Abstract+Company+Inc/@41.3246706,-74.8100715,17z/data=!4m8!3m7!1s0x89c35b1453fb7eb5:0x7f41d3d26c3d8adc!8m2!3d41.3246706!4d-74.8074966!9m1!1b1!16s%2Fg%2F11cn6rvjms?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-card border border-navy/20 text-navy font-semibold px-8 py-3.5 rounded-full hover:bg-navy hover:text-cream hover:border-navy transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-soft active:scale-[0.97]"
+            className="inline-flex items-center gap-3 bg-card border border-navy/20 text-navy font-semibold px-8 py-3.5 rounded-full hover:bg-navy hover:text-cream hover:border-navy transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-soft hover:shadow-teal active:scale-[0.97]"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>

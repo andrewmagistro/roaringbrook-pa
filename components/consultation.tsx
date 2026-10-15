@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion } from "motion/react";
 import { Phone, Mail, MapPin, Clock, CheckCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,27 +14,32 @@ const serviceOptions = [
   "Title Examination",
   "Real Estate Closing",
   "Legal Representation (Real Property)",
-  "Probate / Trust",
   "Not Sure — Need Guidance",
 ];
 
 const contactInfo = [
   {
     icon: Phone,
-    label: "Milford Office",
-    value: "(570) 296-2663",
-    sub: "308 West Harford Street, Milford, PA 18337",
+    label: "Phone",
+    value: "(321) 498-0135",
+    sub: "Calls returned same day",
   },
   {
-    icon: Phone,
-    label: "Hawley Office",
-    value: "(570) 226-2333",
-    sub: "Hawley Silk Mill, 8 Silk Mill Drive, Suite 223-4, Hawley PA 18428",
+    icon: MapPin,
+    label: "Melbourne Office",
+    value: "1900 S. Harbor City Blvd, Suite 200",
+    sub: "1900 Building, Melbourne, FL 32901",
+  },
+  {
+    icon: MapPin,
+    label: "Service Area",
+    value: "Closings Done Statewide",
+    sub: "Remote and digital, wherever you are",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "crkimler@kimlerlaw.com",
+    value: "chris@kimlerlaw.com",
     sub: "We respond promptly",
   },
   {
@@ -47,6 +52,8 @@ const contactInfo = [
 
 export default function Consultation() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -55,14 +62,33 @@ export default function Consultation() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-  };
+    setLoading(true);
+    setError("");
+    try {
+      const token = await (window as any).grecaptcha.execute(
+        "6Le1-4ItAAAAADafk3549bl24rTRVN9V8a0q4kGo",
+        { action: "contact" }
+      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, token }),
+      });
+      if (!res.ok) throw new Error("Verification failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setLoading(false);
+    }
+  }, [form]);
 
   return (
     <section id="consultation" className="py-28 bg-cream">
       <div className="container mx-auto px-6 max-w-7xl">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,13 +97,14 @@ export default function Consultation() {
           className="max-w-2xl mb-14"
         >
           <p className="eyebrow text-navy/70 mb-4">
-            <span className="h-1 w-1 rounded-full bg-white" /> Get in touch
+            <span className="h-1 w-1 rounded-full bg-gold" /> Get in touch
           </p>
           <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-ink leading-[1.05]">
             Let's close your <span className="italic text-navy">deal</span>.
           </h2>
           <p className="mt-4 text-ink-soft text-lg">
-            Reach out and we'll get back to you right away — no waiting, no runaround.
+            Reach out and we'll get back to you right away — no waiting, no
+            runaround.
           </p>
         </motion.div>
 
@@ -95,12 +122,16 @@ export default function Consultation() {
               <div className="space-y-6">
                 {contactInfo.map(({ icon: Icon, label, value, sub }) => (
                   <div key={label} className="flex gap-4">
-                    <div className="flex-shrink-0 p-2.5 bg-white/10 rounded-lg h-fit">
-                      <Icon className="h-4 w-4 text-navy-light" />
+                    <div className="flex-shrink-0 p-2.5 bg-gold/10 rounded-lg h-fit">
+                      <Icon className="h-4 w-4 text-gold" />
                     </div>
                     <div>
-                      <p className="text-white/50 text-xs uppercase tracking-wider">{label}</p>
-                      <p className="text-white font-medium text-sm mt-0.5">{value}</p>
+                      <p className="text-white/50 text-xs uppercase tracking-wider">
+                        {label}
+                      </p>
+                      <p className="text-white font-medium text-sm mt-0.5">
+                        {value}
+                      </p>
                       <p className="text-white/40 text-xs mt-0.5">{sub}</p>
                     </div>
                   </div>
@@ -109,7 +140,9 @@ export default function Consultation() {
             </div>
 
             <div className="bg-card rounded-[1.6rem] p-6 border border-border">
-              <p className="text-navy font-semibold text-sm mb-4">You Can Count On Us For:</p>
+              <p className="text-navy font-semibold text-sm mb-4">
+                You Can Count On Us For:
+              </p>
               <ul className="space-y-3">
                 {[
                   "Fast, responsive communication",
@@ -118,8 +151,11 @@ export default function Consultation() {
                   "Smooth closings on your schedule",
                   "Legal representation when needed",
                 ].map((point) => (
-                  <li key={point} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                    <CheckCircle className="h-4 w-4 text-navy-light flex-shrink-0 mt-0.5" />
+                  <li
+                    key={point}
+                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                  >
+                    <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
                     {point}
                   </li>
                 ))}
@@ -138,19 +174,20 @@ export default function Consultation() {
             <div className="bg-card rounded-[1.6rem] border border-border p-8 md:p-10 shadow-soft">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center text-center py-12">
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle className="h-8 w-8 text-navy-light" />
+                  <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                    <CheckCircle className="h-8 w-8 text-gold" />
                   </div>
                   <h3 className="text-2xl font-bold text-navy">Message Received!</h3>
                   <p className="text-muted-foreground mt-3 max-w-sm">
-                    Thank you, {form.name}. We'll be in touch right away to discuss your transaction.
+                    Thank you, {form.name}. We'll be in touch right away to
+                    discuss your transaction.
                   </p>
                   <button
                     onClick={() => {
                       setSubmitted(false);
                       setForm({ name: "", email: "", phone: "", service: "", message: "" });
                     }}
-                    className="mt-8 text-sm text-navy-light underline underline-offset-4 hover:text-navy-light transition-colors"
+                    className="mt-8 text-sm text-gold underline underline-offset-4 hover:text-gold-dark transition-colors"
                   >
                     Send another message
                   </button>
@@ -160,26 +197,47 @@ export default function Consultation() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-navy font-medium">
-                        Full Name <span className="text-navy-light">*</span>
+                        Full Name <span className="text-gold">*</span>
                       </Label>
-                      <Input id="name" placeholder="Jane Smith" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+                      <Input
+                        id="name"
+                        placeholder="Jane Smith"
+                        required
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-navy font-medium">
-                        Email Address <span className="text-navy-light">*</span>
+                        Email Address <span className="text-gold">*</span>
                       </Label>
-                      <Input id="email" type="email" placeholder="jane@example.com" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="jane@example.com"
+                        required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                      <Label htmlFor="phone" className="text-navy font-medium">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="(570) 555-0100" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
+                      <Label htmlFor="phone" className="text-navy font-medium">
+                        Phone Number
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="(321) 555-0100"
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="service" className="text-navy font-medium">
-                        Service Needed <span className="text-navy-light">*</span>
+                        Service Needed <span className="text-gold">*</span>
                       </Label>
                       <select
                         id="service"
@@ -198,7 +256,7 @@ export default function Consultation() {
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="text-navy font-medium">
-                      Tell Us About Your Transaction <span className="text-navy-light">*</span>
+                      Tell Us About Your Transaction <span className="text-gold">*</span>
                     </Label>
                     <Textarea
                       id="message"
@@ -209,10 +267,16 @@ export default function Consultation() {
                     />
                   </div>
 
-                  <Button type="submit" variant="gold" size="lg" className="w-full">
+                  {error && (
+                    <p className="text-red-500 text-sm">{error}</p>
+                  )}
+                  <Button type="submit" variant="gold" size="lg" className="w-full" disabled={loading}>
                     <Send className="mr-2 h-4 w-4" />
-                    Send Message
+                    {loading ? "Sending…" : "Send Message"}
                   </Button>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Protected by reCAPTCHA.
+                  </p>
                 </form>
               )}
             </div>

@@ -4,7 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { MessageCircle, X, Send, Phone } from "lucide-react";
 
-type Message = { from: "bot" | "user"; text: string };
+type Message = {
+  from: "bot" | "user";
+  text: string;
+};
 
 const faqs: { keywords: string[]; answer: string }[] = [
   {
@@ -15,67 +18,62 @@ const faqs: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["title search", "what is a title search"],
     answer:
-      "A title search is a review of public records to trace the ownership history of a property and uncover any issues before you close. At Roaring Brook Abstract, Attorney Chris Kimler personally examines every title search.",
+      "A title search is a review of public records to trace the ownership history of a property and uncover any issues — like unpaid taxes, judgments, or easements — before you close. At Roaring Brook, Attorney Chris Kimler personally examines every title search.",
   },
   {
     keywords: ["how long", "closing take", "how long does"],
     answer:
-      "Most closings take 1–2 hours at the table. The timeline from contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook Abstract is known for fast, efficient closings.",
+      "Most closings take 1–2 hours at the table. The timeline from contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook is known for fast, efficient closings — we work to get your deal done as quickly as possible.",
   },
   {
     keywords: ["bring to closing", "what do i need", "what to bring"],
     answer:
-      "You'll typically need: a valid government-issued photo ID, a certified or cashier's check (or wire transfer) for your closing funds, and any documents your lender requested. We'll send you a full checklist before your closing date.",
+      "You'll typically need: a valid government-issued photo ID, a certified or cashier's check (or wire transfer) for your closing funds, and any documents your lender or attorney requested. We'll send you a full checklist before your closing date.",
   },
   {
     keywords: ["cost", "fee", "how much", "price", "charge"],
     answer:
-      "Fees vary depending on the transaction type and purchase price. Call us for a quote — Milford: (570) 296-2663 · Hawley: (570) 226-2333 — and we'll give you a clear breakdown with no surprises.",
+      "Fees vary depending on the transaction type and purchase price. Contact us directly for a quote — call (321) 498-0135 and we'll give you a clear breakdown with no surprises.",
   },
   {
     keywords: ["order title", "start", "get started", "how do i order"],
     answer:
-      "To order title, just call us or fill out the contact form on this page. Our team will reach out right away.\n\n📞 Milford: (570) 296-2663\n📞 Hawley: (570) 226-2333",
+      "To order title, just call us or fill out the contact form on this page. Our team will reach out right away to get your transaction started. Call: (321) 498-0135.",
   },
   {
     keywords: ["location", "located", "address", "where are you", "office"],
     answer:
-      "We have two offices:\n\n📍 Milford: 308 West Harford Street, Milford, PA 18337\n📞 (570) 296-2663\n\n📍 Hawley: Hawley Silk Mill, 8 Silk Mill Drive, Suite 223-4, Hawley PA 18428\n📞 (570) 226-2333",
+      "Our main office is in Melbourne, FL, with satellite closing offices in Satellite Beach, Cocoa Beach, and Merritt Island.\n\n📍 1900 Building, 1900 South Harbor City Boulevard, Suite 200, Melbourne, FL 32901\n📞 (321) 498-0135",
   },
   {
     keywords: ["area", "county", "serve", "coverage", "where do you"],
     answer:
-      "We serve Pike County and Wayne County, Pennsylvania — including Milford, Hawley, Honesdale, Dingmans Ferry, Delaware Water Gap, and surrounding communities.",
+      "We proudly serve Brevard County and the Space Coast, including Melbourne, Palm Bay, Cocoa Beach, Satellite Beach, Indialantic, Viera, Suntree, Rockledge, Titusville, Merritt Island, and surrounding communities. We also offer satellite closing offices in Satellite Beach, Cocoa Beach, and Merritt Island for client convenience.",
   },
   {
     keywords: ["chris", "attorney", "kimler", "lawyer", "who is"],
     answer:
-      "Chris Kimler is a licensed Pennsylvania attorney and title agent who owns and operates Roaring Brook Abstract. He limits his law practice to real property, probate, and trust — and personally examines every title. He's also the shareholder of the Law Offices of Christopher R. Kimler, PC.",
+      "Chris Kimler is a licensed attorney and title agent who owns and operates Roaring Brook Title & Escrow. He limits his law practice to real property and title — and personally examines every title. He's also a shareholder in the Law Offices of Christopher R. Kimler, PC.",
   },
   {
     keywords: ["refinance", "refi"],
     answer:
-      "Yes, we handle refinance closings! Contact us at (570) 296-2663 (Milford) or (570) 226-2333 (Hawley) and we'll get your refinance moving quickly.",
+      "Yes, we handle refinance closings! Contact us at (321) 498-0135 and we'll get your refinance moving quickly.",
   },
   {
     keywords: ["hours", "open", "when", "available"],
     answer:
-      "Our offices are open Monday–Friday, 9 AM–5 PM. We're available for urgent matters outside regular hours.",
+      "Our offices are open Monday–Friday, 9 AM–5 PM. We're also available for urgent matters outside regular hours. Give us a call and we'll do our best to accommodate your schedule.",
   },
   {
     keywords: ["probate", "trust", "estate", "will"],
     answer:
-      "Chris Kimler handles real property, probate, and trust matters through the Law Offices of Christopher R. Kimler, PC. For legal questions specific to your situation, please call Chris directly so he can advise you properly.",
-  },
-  {
-    keywords: ["florida", "fl office", "brevard"],
-    answer:
-      "Yes! Roaring Brook Abstract now has a Florida office serving Brevard County. Visit roaringbrookabstractfl.com for Florida title services.",
+      "Chris Kimler handles real property matters through the Law Offices of Christopher R. Kimler, PC. For legal questions specific to your situation, please call Chris directly at (321) 498-0135 so he can advise you properly.",
   },
 ];
 
 const GREETING =
-  "Hi! I'm the Roaring Brook Abstract virtual assistant. I can answer common questions about title insurance, closings, and our Pennsylvania services.\n\nFor legal advice specific to your situation, please call Attorney Chris Kimler directly.\n\nHow can I help you today?";
+  "Hi! I'm the Roaring Brook Title & Escrow virtual assistant. I can answer common questions about title insurance, closings, and our services.\n\nFor legal advice specific to your situation, please call Attorney Chris Kimler directly.\n\nHow can I help you today?";
 
 const QUICK_QUESTIONS = [
   "What is title insurance?",
@@ -88,27 +86,37 @@ function getBotResponse(input: string): string {
   const lower = input.toLowerCase();
 
   for (const faq of faqs) {
-    if (faq.keywords.some((k) => lower.includes(k))) return faq.answer;
+    if (faq.keywords.some((k) => lower.includes(k))) {
+      return faq.answer;
+    }
   }
 
-  if (["legal advice", "lawsuit", "sue", "dispute", "court"].some((k) => lower.includes(k))) {
-    return "For legal questions specific to your situation, please contact Attorney Chris Kimler directly.\n\n📞 Milford: (570) 296-2663\n📞 Hawley: (570) 226-2333\n\nThis chat is for general information only and does not constitute legal advice.";
+  if (
+    lower.includes("legal advice") ||
+    lower.includes("lawsuit") ||
+    lower.includes("sue") ||
+    lower.includes("dispute") ||
+    lower.includes("court")
+  ) {
+    return "For legal questions specific to your situation, please contact Attorney Chris Kimler directly — that's exactly what he's here for.\n\n📞 (321) 498-0135\n\nThis chat is for general information only and does not constitute legal advice.";
   }
 
   if (lower.includes("thank")) {
-    return "You're welcome! Is there anything else I can help you with? Call us anytime — (570) 296-2663.";
+    return "You're welcome! Is there anything else I can help you with? For specific questions, feel free to call us at (321) 498-0135.";
   }
 
-  if (["hello", "hi", "hey"].some((k) => lower.includes(k))) {
-    return "Hi there! How can I help you today? I can answer questions about title insurance, closings, or our office locations.";
+  if (lower.includes("hello") || lower.includes("hi") || lower.includes("hey")) {
+    return "Hi there! How can I help you today? I can answer questions about title insurance, closings, our services, or office locations.";
   }
 
-  return "Great question! For the most accurate answer, I'd recommend calling us directly:\n\n📞 Milford: (570) 296-2663\n📞 Hawley: (570) 226-2333\n\nOr fill out the contact form and we'll get back to you right away.";
+  return "That's a great question! For the most accurate answer, I'd recommend calling us directly:\n\n📞 (321) 498-0135\n\nOr fill out the contact form on this page and we'll get back to you right away.";
 }
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([{ from: "bot", text: GREETING }]);
+  const [messages, setMessages] = useState<Message[]>([
+    { from: "bot", text: GREETING },
+  ]);
   const [input, setInput] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
 
@@ -118,21 +126,20 @@ export default function Chatbot() {
 
   const send = (text: string) => {
     if (!text.trim()) return;
-    setMessages((prev) => [
-      ...prev,
-      { from: "user", text },
-      { from: "bot", text: getBotResponse(text) },
-    ]);
+    const userMsg: Message = { from: "user", text };
+    const botMsg: Message = { from: "bot", text: getBotResponse(text) };
+    setMessages((prev) => [...prev, userMsg, botMsg]);
     setInput("");
   };
 
   return (
     <>
+      {/* Floating button */}
       <motion.button
         onClick={() => setOpen(!open)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-navy rounded-full shadow-navy flex items-center justify-center text-cream"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-navy rounded-full shadow-teal flex items-center justify-center text-cream"
         aria-label="Open chat"
       >
         <AnimatePresence mode="wait">
@@ -148,6 +155,7 @@ export default function Chatbot() {
         </AnimatePresence>
       </motion.button>
 
+      {/* Chat window */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -158,34 +166,39 @@ export default function Chatbot() {
             className="fixed bottom-24 right-6 z-50 w-[350px] bg-card rounded-[1.4rem] shadow-lift overflow-hidden border border-border flex flex-col"
             style={{ maxHeight: "520px" }}
           >
+            {/* Header */}
             <div className="bg-navy-deep px-5 py-4 flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cream/10 font-serif text-white">R</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cream/10 font-serif text-gold-light">R</span>
               <div className="flex-1">
-                <p className="text-cream font-semibold text-sm">Roaring Brook Abstract</p>
+                <p className="text-cream font-semibold text-sm">Roaring Brook Title & Escrow</p>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-green-400" />
                   <span className="text-white/60 text-xs">Online now</span>
                 </div>
               </div>
-              <a href="tel:5702962663" className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+              <a href="tel:3214980135" className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
                 <Phone className="h-4 w-4 text-white" />
               </a>
             </div>
 
+            {/* Disclaimer */}
             <div className="bg-amber-50 border-b border-amber-100 px-4 py-2">
               <p className="text-amber-700 text-[10px] leading-relaxed">
                 ⚠️ For general information only — not legal advice. For legal questions call Chris Kimler directly.
               </p>
             </div>
 
+            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3" style={{ minHeight: 0 }}>
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}>
-                  <div className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
-                    msg.from === "user"
-                      ? "bg-navy text-white rounded-br-sm"
-                      : "bg-muted text-foreground rounded-bl-sm"
-                  }`}>
+                  <div
+                    className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
+                      msg.from === "user"
+                        ? "bg-navy text-white rounded-br-sm"
+                        : "bg-muted text-foreground rounded-bl-sm"
+                    }`}
+                  >
                     {msg.text}
                   </div>
                 </div>
@@ -193,6 +206,7 @@ export default function Chatbot() {
               <div ref={bottomRef} />
             </div>
 
+            {/* Quick questions */}
             {messages.length <= 1 && (
               <div className="px-4 pb-2 flex flex-wrap gap-2">
                 {QUICK_QUESTIONS.map((q) => (
@@ -207,6 +221,7 @@ export default function Chatbot() {
               </div>
             )}
 
+            {/* Input */}
             <div className="p-3 border-t border-border flex gap-2">
               <input
                 type="text"

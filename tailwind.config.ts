@@ -44,27 +44,36 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        /* PA navy blue scale */
-        navy: {
-          DEFAULT: "#1A6FA8",
-          light: "#4A9FD8",
-          dark: "#0F4A72",
-          deep: "#082E47",
+        /* True brand navy — sampled from the Roaring Brook wordmark */
+        brand: {
+          DEFAULT: "#0B213C",
+          light: "#17406B",
+          mid: "#0F2C4E",
+          dark: "#081A30",
+          deep: "#050F1D",
         },
-        /* Warm gold accent */
+        /* Coastal teal scale (legacy class name "navy" kept) */
+        navy: {
+          DEFAULT: "#0E5A6E",
+          light: "#3E92A6",
+          dark: "#0A3C4A",
+          deep: "#072B36",
+        },
+        /* Muted brass-sand single accent (legacy class name "gold" kept) */
         gold: {
           DEFAULT: "#C9A24B",
           light: "#E0C885",
           dark: "#A8822F",
         },
         cream: {
-          DEFAULT: "#F6F8FA",
-          dark: "#EBF0F5",
+          DEFAULT: "#FBF8F2",
+          dark: "#F2ECE0",
         },
         ink: {
           DEFAULT: "#16242B",
           soft: "#5A6B72",
         },
+        sand: "#C9A24B",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -77,9 +86,9 @@ const config: Config = {
         spring: "cubic-bezier(0.32, 0.72, 0, 1)",
       },
       boxShadow: {
-        soft: "0 2px 8px -2px hsl(210 60% 20% / 0.08), 0 12px 40px -8px hsl(210 60% 20% / 0.10)",
-        lift: "0 8px 18px -6px hsl(210 60% 20% / 0.12), 0 28px 60px -12px hsl(210 60% 20% / 0.18)",
-        navy: "0 16px 50px -12px hsl(210 72% 38% / 0.45)",
+        soft: "0 2px 8px -2px hsl(192 40% 20% / 0.08), 0 12px 40px -8px hsl(192 40% 20% / 0.10)",
+        lift: "0 8px 18px -6px hsl(192 40% 20% / 0.12), 0 28px 60px -12px hsl(192 40% 20% / 0.18)",
+        teal: "0 16px 50px -12px hsl(192 78% 24% / 0.45)",
       },
       keyframes: {
         "accordion-down": {

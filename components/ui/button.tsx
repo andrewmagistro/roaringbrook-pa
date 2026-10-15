@@ -9,20 +9,20 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-navy text-cream hover:bg-navy-dark shadow-soft hover:shadow-navy",
+          "bg-navy text-cream hover:bg-navy-dark shadow-soft hover:shadow-teal",
         outline:
           "border border-input bg-transparent hover:bg-muted hover:text-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-muted hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        /* white fill for dark backgrounds */
-        gold: "bg-white text-navy hover:bg-cream shadow-soft",
+        /* brass-sand accent fill */
+        gold: "bg-gold text-ink hover:bg-gold-dark hover:text-cream shadow-soft",
         /* light outline for dark backgrounds */
         "navy-outline":
-          "border border-white/30 text-white hover:bg-white hover:text-navy-dark backdrop-blur-sm",
+          "border border-cream/30 text-cream hover:bg-cream hover:text-navy-dark backdrop-blur-sm",
         "gold-outline":
-          "border border-white/40 text-white hover:bg-white hover:text-navy-dark",
+          "border border-cream/40 text-cream hover:bg-cream hover:text-navy-dark",
       },
       size: {
         default: "h-11 px-6 py-2",

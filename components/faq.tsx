@@ -39,7 +39,7 @@ const faqs = [
       },
       {
         q: "What is a title search and why is it important?",
-        a: "A title search is a thorough review of public records to trace the ownership history of a property. It uncovers issues like unpaid taxes, liens, judgments, or easements before you close. At Roaring Brook Abstract, Attorney Chris Kimler personally examines every title search to make sure your transaction is legally sound.",
+        a: "A title search is a thorough review of public records to trace the ownership history of a property. It uncovers issues like unpaid taxes, liens, judgments, or easements before you close. At Roaring Brook Title & Escrow, Attorney Chris Kimler personally examines every title search to make sure your transaction is legally sound.",
       },
     ],
   },
@@ -48,19 +48,19 @@ const faqs = [
     questions: [
       {
         q: "How do I obtain title insurance and what does it cost?",
-        a: "Let your realtor know you want to purchase an Owner's Title Insurance Policy. In Pennsylvania, title insurance premiums are based on filed rates approved by the Pennsylvania Insurance Department. You only pay this premium once — at closing. The rate depends on the purchase price of the property.\n\nRoaring Brook Abstract writes title insurance for First American Title Insurance Company — one of the largest and most financially secure title insurance companies in America.",
+        a: "Let your realtor know you want to purchase an Owner's Title Insurance Policy. In Florida, title insurance premiums are promulgated (set) by the Florida Office of Insurance Regulation, so the rate is the same from agent to agent. You only pay this premium once. The rate depends on the purchase price of the property, and your policy amount must equal the purchase price or mortgage amount.\n\nRoaring Brook Title & Escrow writes title insurance for First American Title Insurance Company — one of the largest and most financially secure title insurance companies in America.",
       },
       {
         q: "How long does a closing take?",
-        a: "Most closings take 1–2 hours at the table. The overall timeline from signed contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook Abstract is known for fast, efficient closings — we work to get your deal done as quickly as possible.",
+        a: "Most closings take 1–2 hours at the table. The overall timeline from signed contract to closing typically ranges from 30–60 days depending on your lender. Roaring Brook Title & Escrow is known for fast, efficient closings — we work to get your deal done as quickly as possible.",
       },
       {
         q: "What do I bring to closing?",
         a: "You'll typically need:\n\n• A valid government-issued photo ID\n• A certified or cashier's check (or wire transfer) for your closing funds\n• Any documents your lender or attorney requested\n\nWe'll send you a complete checklist before your closing date so there are no surprises.",
       },
       {
-        q: "Do I need an attorney for my closing in Pennsylvania?",
-        a: "Pennsylvania law does not require an attorney at closing, but having one is a significant advantage — especially when title defects, probate issues, or complex ownership situations arise. Roaring Brook Abstract is attorney-led: Chris Kimler is both a licensed Pennsylvania attorney and title agent. When your deal calls for legal advice, the Law Offices of Christopher R. Kimler, PC works right alongside us.",
+        q: "Do I need an attorney for my closing?",
+        a: "In Florida, an attorney is not required for a real estate closing, but having one is a significant advantage. Roaring Brook Title & Escrow is attorney-led — Chris Kimler is both a licensed attorney and title agent. For transactions that require legal advice or representation beyond title work, the Law Offices of Christopher R. Kimler, PC works closely alongside us.",
       },
     ],
   },
@@ -72,8 +72,8 @@ const faqs = [
         a: "Yes — in addition to residential purchases, refinances, and sales, we handle commercial real estate transactions. Contact us to discuss your specific needs.",
       },
       {
-        q: "What areas do you serve in Pennsylvania?",
-        a: "We serve Pike County and Wayne County, Pennsylvania — including Milford, Hawley, Honesdale, Dingmans Ferry, Delaware Water Gap, and surrounding communities. We have two convenient offices: one in Milford and one in Hawley.",
+        q: "What areas do you serve?",
+        a: "We serve Brevard County and the Space Coast, including Melbourne, Palm Bay, Cocoa Beach, Satellite Beach, Indialantic, Viera, Suntree, Rockledge, Titusville, and Merritt Island. Our office is located in Melbourne, FL.",
       },
       {
         q: "Can you handle closings on evenings or weekends?",
@@ -129,6 +129,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-28 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,20 +138,22 @@ export default function FAQ() {
           className="max-w-2xl mb-12"
         >
           <p className="eyebrow text-navy/70 mb-4">
-            <span className="h-1 w-1 rounded-full bg-white" /> Common questions
+            <span className="h-1 w-1 rounded-full bg-gold" /> Common questions
           </p>
           <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-ink leading-[1.05]">
             Title insurance, <span className="italic text-navy">explained</span>.
           </h2>
           <p className="mt-4 text-ink-soft text-lg">
-            Everything you need to know about title insurance and closings. Can't find your answer?{" "}
-            <a href="#consultation" className="text-navy underline underline-offset-4 hover:text-navy-light">
+            Everything you need to know about title insurance and closings. Can't
+            find your answer?{" "}
+            <a href="/contact" className="text-navy underline underline-offset-4 hover:text-navy-light">
               Contact us directly.
             </a>
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-4 gap-8 items-start">
+          {/* Category tabs */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -173,6 +176,7 @@ export default function FAQ() {
             ))}
           </motion.div>
 
+          {/* Questions */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -198,20 +202,23 @@ export default function FAQ() {
                 ))}
             </AnimatePresence>
 
+            {/* CTA at bottom */}
             <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <p className="text-sm text-muted-foreground">
                 Still have questions? We're happy to help.
               </p>
               <div className="flex gap-3">
-                <a href="tel:5702962663" className="text-sm font-medium text-navy hover:text-navy-light underline underline-offset-4 transition-colors">
-                  Call Milford
+                <a
+                  href="tel:3214980135"
+                  className="text-sm font-medium text-navy hover:text-navy-light underline underline-offset-4 transition-colors"
+                >
+                  Call Us
                 </a>
                 <span className="text-muted-foreground">·</span>
-                <a href="tel:5702262333" className="text-sm font-medium text-navy hover:text-navy-light underline underline-offset-4 transition-colors">
-                  Call Hawley
-                </a>
-                <span className="text-muted-foreground">·</span>
-                <a href="#consultation" className="text-sm font-medium text-navy hover:text-navy-light underline underline-offset-4 transition-colors">
+                <a
+                  href="/contact"
+                  className="text-sm font-medium text-navy hover:text-navy-light underline underline-offset-4 transition-colors"
+                >
                   Contact Form
                 </a>
               </div>
