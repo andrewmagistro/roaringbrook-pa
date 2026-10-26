@@ -6,7 +6,7 @@ import Credentials from "@/components/credentials";
 export const metadata: Metadata = {
   title: "Contact | Roaring Brook Abstract",
   description:
-    "Reach Roaring Brook Abstract in Milford, Pennsylvania. Call (570) 296-7300 or send us a message — calls are returned the same day.",
+    "Reach Roaring Brook Abstract in Milford, Pennsylvania. Call (570) 296-2663 or send us a message — calls are returned the same day.",
 };
 
 export default function ContactPage() {

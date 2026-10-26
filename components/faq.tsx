@@ -209,7 +209,7 @@ export default function FAQ() {
               </p>
               <div className="flex gap-3">
                 <a
-                  href="tel:5702967300"
+                  href="tel:5702962663"
                   className="text-sm font-medium text-navy hover:text-navy-light underline underline-offset-4 transition-colors"
                 >
                   Call Us

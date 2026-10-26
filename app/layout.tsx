@@ -38,7 +38,7 @@ const localBusinessSchema = {
       name: "Nicholas J. McIntyre, Esq",
     },
   ],
-  telephone: "+1-570-296-7300",
+  telephone: "+1-570-296-2663",
   email: "office@roaringbrookpa.com",
   address: {
     "@type": "PostalAddress",

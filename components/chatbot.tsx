@@ -33,17 +33,17 @@ const faqs: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["cost", "fee", "how much", "price", "charge"],
     answer:
-      "Fees vary depending on the transaction type and purchase price. Contact us directly for a quote — call (570) 296-7300 and we'll give you a clear breakdown with no surprises.",
+      "Fees vary depending on the transaction type and purchase price. Contact us directly for a quote — call (570) 296-2663 and we'll give you a clear breakdown with no surprises.",
   },
   {
     keywords: ["order title", "start", "get started", "how do i order"],
     answer:
-      "To order title, just call us or fill out the contact form on this page. Our team will reach out right away to get your transaction started. Call: (570) 296-7300.",
+      "To order title, just call us or fill out the contact form on this page. Our team will reach out right away to get your transaction started. Call: (570) 296-2663.",
   },
   {
     keywords: ["location", "located", "address", "where are you", "office"],
     answer:
-      "Our office is in Milford, PA, serving Pike County and the surrounding Pocono / tri-state region.\n\n📍 410 Broad Street, Milford, PA 18337\n📞 (570) 296-7300",
+      "Our office is in Milford, PA, serving Pike County and the surrounding Pocono / tri-state region.\n\n📍 410 Broad Street, Milford, PA 18337\n📞 (570) 296-2663",
   },
   {
     keywords: ["area", "county", "serve", "coverage", "where do you"],
@@ -68,7 +68,7 @@ const faqs: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["refinance", "refi"],
     answer:
-      "Yes, we handle refinance closings! Contact us at (570) 296-7300 and we'll get your refinance moving quickly.",
+      "Yes, we handle refinance closings! Contact us at (570) 296-2663 and we'll get your refinance moving quickly.",
   },
   {
     keywords: ["hours", "open", "when", "available"],
@@ -78,7 +78,7 @@ const faqs: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["probate", "trust", "estate", "will"],
     answer:
-      "Jason and Nick handle real property and related legal matters through their law firm, Ohliger & McIntyre, LLC. For legal questions specific to your situation, please call us directly at (570) 296-7300 so one of them can advise you properly.",
+      "Jason and Nick handle real property and related legal matters through their law firm, Ohliger & McIntyre, LLC. For legal questions specific to your situation, please call us directly at (570) 296-2663 so one of them can advise you properly.",
   },
 ];
 
@@ -108,18 +108,18 @@ function getBotResponse(input: string): string {
     lower.includes("dispute") ||
     lower.includes("court")
   ) {
-    return "For legal questions specific to your situation, please contact Jason Ohliger or Nick McIntyre directly — that's exactly what they're here for.\n\n📞 (570) 296-7300\n\nThis chat is for general information only and does not constitute legal advice.";
+    return "For legal questions specific to your situation, please contact Jason Ohliger or Nick McIntyre directly — that's exactly what they're here for.\n\n📞 (570) 296-2663\n\nThis chat is for general information only and does not constitute legal advice.";
   }
 
   if (lower.includes("thank")) {
-    return "You're welcome! Is there anything else I can help you with? For specific questions, feel free to call us at (570) 296-7300.";
+    return "You're welcome! Is there anything else I can help you with? For specific questions, feel free to call us at (570) 296-2663.";
   }
 
   if (lower.includes("hello") || lower.includes("hi") || lower.includes("hey")) {
     return "Hi there! How can I help you today? I can answer questions about title insurance, closings, our services, or our office location.";
   }
 
-  return "That's a great question! For the most accurate answer, I'd recommend calling us directly:\n\n📞 (570) 296-7300\n\nOr fill out the contact form on this page and we'll get back to you right away.";
+  return "That's a great question! For the most accurate answer, I'd recommend calling us directly:\n\n📞 (570) 296-2663\n\nOr fill out the contact form on this page and we'll get back to you right away.";
 }
 
 export default function Chatbot() {
@@ -186,7 +186,7 @@ export default function Chatbot() {
                   <span className="text-white/60 text-xs">Online now</span>
                 </div>
               </div>
-              <a href="tel:5702967300" className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+              <a href="tel:5702962663" className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
                 <Phone className="h-4 w-4 text-white" />
               </a>
             </div>

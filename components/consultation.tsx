@@ -21,7 +21,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "(570) 296-7300",
+    value: "(570) 296-2663",
     sub: "Calls returned same day",
   },
   {
@@ -230,7 +230,7 @@ export default function Consultation() {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="(321) 555-0100"
+                        placeholder="(570) 555-0100"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       />

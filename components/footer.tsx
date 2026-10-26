@@ -148,10 +148,10 @@ export default function Footer() {
                     Milford, PA 18337
                   </p>
                   <a
-                    href="tel:5702967300"
+                    href="tel:5702962663"
                     className="mt-1.5 flex items-center gap-1.5 text-xs text-gold hover:underline"
                   >
-                    <Phone className="h-3 w-3" /> (570) 296-7300
+                    <Phone className="h-3 w-3" /> (570) 296-2663
                   </a>
                 </div>
               </li>

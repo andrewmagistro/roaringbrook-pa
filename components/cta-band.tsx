@@ -33,11 +33,11 @@ export default function CtaBand({
               </span>
             </Link>
             <a
-              href="tel:5702967300"
+              href="tel:5702962663"
               className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-medium text-ink transition-colors duration-300 hover:bg-cream-dark"
             >
               <Phone className="h-4 w-4 text-brand" />
-              (570) 296-7300
+              (570) 296-2663
             </a>
           </div>
         </div>

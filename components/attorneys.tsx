@@ -78,7 +78,7 @@ export default function Attorneys() {
             {/* contact pills */}
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               {[
-                { icon: Phone, label: "Call", val: "(570) 296-7300", href: "tel:5702967300" },
+                { icon: Phone, label: "Call", val: "(570) 296-2663", href: "tel:5702962663" },
                 { icon: MapPin, label: "Office", val: "Milford, PA", href: "#consultation" },
                 { icon: Mail, label: "Email", val: "Message", href: "mailto:office@roaringbrookpa.com" },
               ].map(({ icon: Icon, label, val, href }) => (

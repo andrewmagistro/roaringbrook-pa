@@ -65,8 +65,8 @@ export default function StartClosingForm() {
         </p>
         <p className="mt-6 text-sm text-ink-soft">
           Need something sooner? Call{" "}
-          <a href="tel:5702967300" className="font-medium text-brand hover:underline">
-            (570) 296-7300
+          <a href="tel:5702962663" className="font-medium text-brand hover:underline">
+            (570) 296-2663
           </a>
           .
         </p>
@@ -165,8 +165,8 @@ export default function StartClosingForm() {
       {status === "error" && (
         <p className="mt-6 rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
           Something went wrong sending that. Please call{" "}
-          <a href="tel:5702967300" className="font-medium underline">
-            (570) 296-7300
+          <a href="tel:5702962663" className="font-medium underline">
+            (570) 296-2663
           </a>{" "}
           and we&apos;ll get you started over the phone.
         </p>
