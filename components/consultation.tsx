@@ -22,7 +22,6 @@ const contactInfo = [
     icon: Phone,
     label: "Phone",
     value: "(570) 296-2663",
-    sub: "Calls returned same day",
   },
   {
     icon: MapPin,
@@ -132,7 +131,9 @@ export default function Consultation() {
                       <p className="text-white font-medium text-sm mt-0.5">
                         {value}
                       </p>
-                      <p className="text-white/40 text-xs mt-0.5">{sub}</p>
+                      {sub && (
+                        <p className="text-white/40 text-xs mt-0.5">{sub}</p>
+                      )}
                     </div>
                   </div>
                 ))}

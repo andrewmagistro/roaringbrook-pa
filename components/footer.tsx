@@ -32,7 +32,7 @@ export default function Footer() {
               Ready to close your deal?
             </h2>
             <p className="mt-2 text-sm text-cream/50">
-              Attorney owned and operated — calls returned the same day.
+              Attorney owned and operated.
             </p>
           </div>
           <Link
