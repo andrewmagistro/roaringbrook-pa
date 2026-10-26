@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Realtors", href: "/realtors" },
   { label: "Lenders", href: "/lenders" },
   { label: "Buyers & Sellers", href: "/buyers-sellers" },
-  { label: "Meet Jason & Nick", href: "/about" },
+  { label: "Meet Our Team", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
